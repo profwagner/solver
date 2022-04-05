@@ -18,12 +18,18 @@ def print_board (board):
     for rownum in range(9):
         row = board[rownum]
         #print (row)
-        for space in row:
+        for colnum in range(9):
+            space = row[colnum]
             print (space,end='')
+            if colnum % 3 == 2 and colnum < 8:
+                print ('|', end= '')
+            
         print ()
         #if rownum == 2 or rownum == 5:
         if rownum % 3 == 2 and rownum < 8:
-            print ('-----------------------------------')
+            for i in range(11):
+                print ('-', end= '')
+            print ()
             
 def check_col (column, num, board):
     #return False if num appears in column
